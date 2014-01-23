@@ -50,4 +50,13 @@ describe "StaticPages" do
 	  end
 	end
 
+	describe "聯絡我 static_pages/contact" do
+
+	  it "首頁頁面標題要含有'Ruby on Rails | Contact'" do
+	    visit '/static_pages/contact'
+	    expect(page).to have_title('Ruby on Rails | Contact')
+	  end
+	end
+
+
 end
