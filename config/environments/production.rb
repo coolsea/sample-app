@@ -77,4 +77,7 @@ SampleApp::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  #在生產環境打開SSL
+  config.force_ssl = true
 end
