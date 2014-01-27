@@ -1,11 +1,27 @@
-<div class="center hero-unit">
+<% if signed_in? %>
+	<div class="row">
+		<aside class="span4">
+			<section>
+				<%= render 'shared/user_info' %>
+			</section>
 
-	<h1>酷思小魏的第一個網站</h1>
+			<section>
+				<%= render 'shared/micropost_form' %>
+			</section>
+		</aside>
+	</div>
 
-	<h2>Sample App ：這裡是Rails首頁測試區</h2>
+<% else %>
 
-	<%= link_to "Sign up now!" , signup_path ,class: "btn btn-large btn-primary" %>
-</div>
+	<div class="center hero-unit">
 
-<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+		<h1>酷思小魏的第一個網站</h1>
 
+		<h2>Sample App ：這是我的第一個Rails4網站。</h2>
+
+		<%= link_to "Sign up now!" , signup_path ,class: "btn btn-large btn-primary" %>
+	</div>
+
+	<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+
+<% end %>

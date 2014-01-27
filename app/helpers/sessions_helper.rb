@@ -44,5 +44,10 @@ module SessionsHelper
 		session[:return_to] = request.fullpath if request.get?
 	end
 
+	#進行沒有權限操作時，必須要先登入
+	def signed_in_user
+	    store_location
+	    redirect_to signin_url, notice: "Please sign in." unless signed_in?
+	end
 
 end
